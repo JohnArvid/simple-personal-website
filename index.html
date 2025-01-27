@@ -1,59 +1,142 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JohnArvid - multitalented creative genius</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Source+Sans+Pro:wght@400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kommer snart...</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      background-color: white;
+      color: black;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: black;
+        color: white;
+      }
+      a {
+        color: white;
+      }
+      a:visited {
+        color: firebrick;
+      }
+    }
+    .amatic-sc-regular {
+      font-family: "Amatic SC", serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    .amatic-sc-bold {
+      font-family: "Amatic SC", serif;
+      font-weight: 700;
+      font-style: normal;
+    }
+    body {
+      margin: 0;
+      /* display: flex; */
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    #kommer-snart {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      width: 162px;
+    }
+
+    footer {
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+      padding: 1rem 0;
+      position: fixed;
+      bottom: 0;
+    }
+
+    .contact {
+      margin: 0 2em;
+      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    section.contact {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .container {
+      height: 61vh;
+      box-sizing: border-box;
+      width: 100%;
+    }
+
+    .dots::after {
+      content: "";
+      animation: dots 1.5s infinite steps(4);
+    }
+
+    @keyframes dots {
+      0% {
+        content: "";
+      }
+      25% {
+        content: ".";
+      }
+      50% {
+        content: "..";
+      }
+      75% {
+        content: "...";
+      }
+      100% {
+        content: "";
+      }
+    }
+
+
+  </style>
 </head>
-<body>
-    <header>
-        <div class="logo">JohnArvid</div>
-        <h1>JohnArvid - multitalented creative genius</h1>
-    </header>
-    <div class="content">
-        <section class="portfolio section">
-            <div class="portfolio">
-                <h2>Portfolio</h2>
-                <ul class="project-list">
-                    <li class="project-item">
-                        <h3 class="project-title">Projekt 1:</h3> 
-                        <p>Beskrivning av projekt 1.</p>
-                    </li>
-                    <li class="project-item">
-                        <h3 class="project-title">Projekt 2:</h3> 
-                        <p>Beskrivning av projekt 2.</p>
-                    </li>
-                    <li class="project-item">
-                        <h3 class="project-title">Projekt 3:</h3> 
-                        <p>Beskrivning av projekt 3.</p>
-                    </li>
-                    <!-- Lägg till fler projekt här -->
-                </ul>
-            </div>
-        </section>
-        <section class="contact section">
-            <div class="contact">
-                <h2>Kontakt</h2>
-                <p>För att komma i kontakt med mig, använd följande information:</p>
-                <p><i class="fas fa-envelope icon"></i> Email: <a href="mailto:johnarvid@example.com">johnarvid@example.com</a></p>
-                <p><i class="fas fa-phone icon"></i> Telefon: +46 123 456 789</p>
-                <p><i class="fab fa-linkedin icon"></i> LinkedIn: <a href="https://www.linkedin.com/in/johnarvid" target="_blank">JohnArvid</a></p>
-                <!-- Lägg till fler kontaktmetoder här om nödvändigt -->
-            </div>
-        </section>
-        <div class="graphic-element"></div>
+<body class="amatic-sc-regular">
+  <div class="container">
+    <div id="kommer-snart">
+      <h1>Kommer snart<span class="dots"></span></h1>
     </div>
-    <footer>
-        <p>&copy; <span id="year"></span> JohnArvid</p>
-    </footer>
-</body>
+  </div>
+  <section class="contact section">
+    <div class="contact">
+        <p><a href="hej@johnarvid.se"><i class="fas fa-envelope icon"></i> hej@johnarvid.se</a></p>
+    </div>
+    <div class="contact">
+        <p><i class="fas fa-phone icon"></i> +46 738 17 93 80</p>
+    </div>
+    <div class="contact">
+            <p><a href="https://www.linkedin.com/in/arvid-lindstr%C3%B6m-28aa17291/" target="_blank"><i class="fab fa-linkedin icon"></i> Linkedin</a></p>
+    </div>
+    <div class="contact">
+      <p><a href="https://github.com/JohnArvid/" target="_blank"><i class="fab fa-github icon"></i> GitHub</a></p>
+</div>
+  </section>
+<footer>
+  <p>© <span id="year">2025</span> JohnArvid</p>
+</footer>
 <script>
   "use strict"
   let now = new Date();
   let year = now.getUTCFullYear();
-  document.getElementById("year").innerText = year;
-</script>
+   document.getElementById("year").innerText = year;
+  </script>
+</body>
+
 </html>
