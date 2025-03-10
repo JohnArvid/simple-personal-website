@@ -52,7 +52,7 @@
       height: 100vh;
     }
 
-    #kommer-snart {
+    #main {
       height: 100%;
       display: flex;
       justify-content: center;
@@ -90,50 +90,65 @@
       width: 100%;
     }
 
-    .dots::after {
-      content: "";
-      animation: dots 1.5s infinite steps(4);
+    #main h1 {
+      font-size: 3rem;
+      display: inline-flex;
+    }
+    #main h1 span {
+      opacity: 0;
+      display: inline-block;
+      animation: bounceIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
     }
 
-    @keyframes dots {
+    @keyframes bounceIn {
       0% {
-        content: "";
+        opacity: 0;
+        transform: translateY(50px);
       }
-      25% {
-        content: ".";
+      60% {
+        opacity: 1;
+        transform: translateY(-5px);
       }
-      50% {
-        content: "..";
-      }
-      75% {
-        content: "...";
+      80% {
+        transform: translateY(5px);
       }
       100% {
-        content: "";
+        opacity: 1;
+        transform: translateY(0);
       }
     }
 
+    
 
   </style>
 </head>
 <body class="amatic-sc-regular">
   <div class="container">
-    <div id="kommer-snart">
-      <h1>Kommer snart<span class="dots"></span></h1>
+    <div id="main">
+      <h1 id="animated-text">Arvid Lindström</h1>
     </div>
   </div>
   <section class="contact section">
     <div class="contact">
-        <p><a href="mailto:hej@johnarvid.se"><i class="fas fa-envelope icon"></i> hej@johnarvid.se</a></p>
+        <p>
+          <a href="mailto:hej@johnarvid.se?subject:Goda nyheter!">
+          <i class="fas fa-envelope icon"></i> hej@johnarvid.se</a>
+        </p>
     </div>
     <div class="contact">
-        <p><i class="fas fa-phone icon"></i> +46 738 17 93 80</p>
+        <p>
+          <a href="tel:+46738179380"><i class="fas fa-phone icon"></i> +46 738-17 93 80</a></p>
     </div>
     <div class="contact">
-            <p><a href="https://www.linkedin.com/in/arvid-lindstr%C3%B6m-28aa17291/" target="_blank"><i class="fab fa-linkedin icon"></i> Linkedin</a></p>
+            <p>
+              <a href="https://www.linkedin.com/in/john-arvid" target="_blank">
+              <i class="fab fa-linkedin icon"></i> Linkedin</a>
+            </p>
     </div>
     <div class="contact">
-      <p><a href="https://github.com/JohnArvid/" target="_blank"><i class="fab fa-github icon"></i> GitHub</a></p>
+      <p>
+        <a href="https://github.com/JohnArvid/" target="_blank"><i class="fab fa-github icon"></i> GitHub</a>
+      </p>
 </div>
   </section>
 <footer>
@@ -144,6 +159,22 @@
   let now = new Date();
   let year = now.getUTCFullYear();
    document.getElementById("year").innerText = year;
+
+   document.addEventListener("DOMContentLoaded", () => {
+      const text = document.getElementById("animated-text");
+      const letters = text.innerText.split("");
+
+      text.textContent = ""; // Rensa befintlig text
+
+      letters.forEach((letter, index) => {
+        const span = document.createElement("span");
+        span.innerHTML = letter === " " ? "&nbsp;" : letter; // Hantera mellanslag
+        span.style.animationDelay = `${index * 0.1}s`; // Fördröjning för varje bokstav
+        text.appendChild(span);
+      });
+    });
+
+   console.info("Hej, kul att du är här. Något som inte funkar, frågor? \nMejla hej@johnarvid.se")
   </script>
 </body>
 
